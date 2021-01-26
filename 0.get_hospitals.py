@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 url ='https://qz.com/1518545/price-lists-for-the-115-biggest-us-hospitals-new-transparency-law/'
 response = requests.get(url)
-soup = BeautifulSoup(resyponse.text, 'lxml')
+soup = BeautifulSoup(response.text, 'lxml')
 entries = soup.find_all("td")
 df = pandas.DataFrame(columns = ["hospital_name", "hospital_id", "hospital_url"])
 
